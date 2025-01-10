@@ -13,6 +13,9 @@ import { AuthController } from './auth.controller';
 import { ChangePasswordProvider } from './providers/change-password.provider';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from '../domain';
+import { ForgotPasswordProvider } from './providers/forgot-password.provider';
+import { ResetPasswordProvider } from './providers/reset-password.provider';
+import { MailModule } from '../mail/mail.module';
 
 @Module({
   imports: [
@@ -20,6 +23,7 @@ import { User } from '../domain';
     ConfigModule.forFeature(jwtConfig),
     JwtModule.registerAsync(jwtConfig.asProvider()),
     TypeOrmModule.forFeature([User]),
+    MailModule,
   ],
   controllers: [AuthController],
   providers: [
@@ -29,7 +33,9 @@ import { User } from '../domain';
     RefreshTokensProvider,
     SignInProvider,
     ChangePasswordProvider,
+    ForgotPasswordProvider,
+    ResetPasswordProvider,
   ],
-  exports: [AuthService, HashingProvider],
+  exports: [AuthService, HashingProvider, ForgotPasswordProvider],
 })
 export class AuthModule {}

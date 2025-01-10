@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import {
   IsString,
@@ -8,24 +9,37 @@ import {
   MaxLength,
   IsOptional,
 } from 'class-validator';
+import { string } from 'joi';
 
 export class UserDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(3)
   @MaxLength(96)
+  @ApiProperty({
+    type: 'string',
+    description: 'This is a required property',
+  })
   firstName: string;
 
   @IsString()
   @IsOptional()
   @MinLength(3)
   @MaxLength(96)
+  @ApiProperty({
+    type: 'string',
+    description: 'This is an optional field',
+  })
   lastName?: string;
 
   @IsString()
   @IsNotEmpty()
   @IsEmail()
   @MaxLength(96)
+  @ApiProperty({
+    type: 'string',
+    description: 'This is a required property',
+  })
   email: string;
 
   // @IsString()
@@ -36,5 +50,9 @@ export class UserDto {
   //   message:
   //     'Has minimum 8 characters in length, At least one uppercase English letter, At least one lowercase English letter, At least one digit, At least one special character',
   // })
+  @ApiProperty({
+    type: 'string',
+    description: 'This is a required property',
+  })
   password: string;
 }

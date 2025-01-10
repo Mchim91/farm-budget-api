@@ -144,9 +144,11 @@
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#email" >email</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
@@ -158,13 +160,11 @@
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
                                 <a href="#lastName" >lastName</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#password" >password</a>
                             </li>
@@ -197,6 +197,7 @@
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>email</b></span>
                         <a href="#email"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -213,13 +214,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsNotEmpty()<br />@IsEmail()<br />@MaxLength(96)<br />
+                            @IsString()<br />@IsNotEmpty()<br />@IsEmail()<br />@MaxLength(96)<br />@ApiProperty({type: &#x27;string&#x27;, description: &#x27;This is a required property&#x27;})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/data/user.dto.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/data/user.dto.ts:43</a></div>
                         </td>
                     </tr>
 
@@ -232,6 +233,7 @@
                 <td class="col-md-4">
                     <a name="firstName"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
@@ -252,13 +254,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsNotEmpty()<br />@MinLength(3)<br />@MaxLength(96)<br />
+                            @IsString()<br />@IsNotEmpty()<br />@MinLength(3)<br />@MaxLength(96)<br />@ApiProperty({type: &#x27;string&#x27;, description: &#x27;This is a required property&#x27;})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/data/user.dto.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/data/user.dto.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -271,6 +273,7 @@
                 <td class="col-md-4">
                     <a name="lastName"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier"></span>
@@ -292,13 +295,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsOptional()<br />@MinLength(3)<br />@MaxLength(96)<br />
+                            @IsString()<br />@IsOptional()<br />@MinLength(3)<br />@MaxLength(96)<br />@ApiProperty({type: &#x27;string&#x27;, description: &#x27;This is an optional field&#x27;})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/data/user.dto.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/data/user.dto.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -311,9 +314,6 @@
                 <td class="col-md-4">
                     <a name="password"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>password</b></span>
                         <a href="#password"><span class="icon ion-ios-link"></span></a>
@@ -331,13 +331,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsString()<br />@IsNotEmpty()<br />@MinLength(8)<br />@Matches(/^(?&#x3D;.*?[A-Z])(?&#x3D;.*?[a-z])(?&#x3D;.*?[0-9])(?&#x3D;.*?[#?!@$%^&amp;*-]).{8,}$/, {message: &#x27;Has minimum 8 characters in length, At least one uppercase English letter, At least one lowercase English letter, At least one digit, At least one special character&#x27;})<br />
+                            @ApiProperty({type: &#x27;string&#x27;, description: &#x27;This is a required property&#x27;})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/data/user.dto.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/data/user.dto.ts:57</a></div>
                         </td>
                     </tr>
 
@@ -356,7 +356,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty } from &#x27;@nestjs/swagger&#x27;;
+import { Exclude } from &#x27;class-transformer&#x27;;
+import {
   IsString,
   IsNotEmpty,
   MinLength,
@@ -365,32 +367,50 @@
   MaxLength,
   IsOptional,
 } from &#x27;class-validator&#x27;;
+import { string } from &#x27;joi&#x27;;
 
 export class UserDto {
   @IsString()
   @IsNotEmpty()
   @MinLength(3)
   @MaxLength(96)
+  @ApiProperty({
+    type: &#x27;string&#x27;,
+    description: &#x27;This is a required property&#x27;,
+  })
   firstName: string;
 
   @IsString()
   @IsOptional()
   @MinLength(3)
   @MaxLength(96)
+  @ApiProperty({
+    type: &#x27;string&#x27;,
+    description: &#x27;This is an optional field&#x27;,
+  })
   lastName?: string;
 
   @IsString()
   @IsNotEmpty()
   @IsEmail()
   @MaxLength(96)
+  @ApiProperty({
+    type: &#x27;string&#x27;,
+    description: &#x27;This is a required property&#x27;,
+  })
   email: string;
 
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(8)
-  @Matches(/^(?&#x3D;.*?[A-Z])(?&#x3D;.*?[a-z])(?&#x3D;.*?[0-9])(?&#x3D;.*?[#?!@$%^&amp;*-]).{8,}$/, {
-    message:
-      &#x27;Has minimum 8 characters in length, At least one uppercase English letter, At least one lowercase English letter, At least one digit, At least one special character&#x27;,
+  // @IsString()
+  // @IsNotEmpty()
+  // @MinLength(8)
+  // @Exclude()
+  // @Matches(/^(?&#x3D;.*?[A-Z])(?&#x3D;.*?[a-z])(?&#x3D;.*?[0-9])(?&#x3D;.*?[#?!@$%^&amp;*-]).{8,}$/, {
+  //   message:
+  //     &#x27;Has minimum 8 characters in length, At least one uppercase English letter, At least one lowercase English letter, At least one digit, At least one special character&#x27;,
+  // })
+  @ApiProperty({
+    type: &#x27;string&#x27;,
+    description: &#x27;This is a required property&#x27;,
   })
   password: string;
 }

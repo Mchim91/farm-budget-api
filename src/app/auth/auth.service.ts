@@ -4,9 +4,12 @@ import { SignInProvider } from './providers/sign-in.provider';
 import { RefreshTokensProvider } from './providers/refresh-tokens.provider';
 import { SignInDto } from './dtos/signin.dto';
 import { RefreshTokenDto } from './dtos/refresh-token.dto';
-import { ChangePasswordDto } from '../data';
+import { ChangePasswordDto } from './dtos';
+
 import { ChangePasswordProvider } from './providers/change-password.provider';
 import { User } from '../domain';
+import { ForgotPasswordProvider } from './providers/forgot-password.provider';
+import { ResetPasswordProvider } from './providers/reset-password.provider';
 
 @Injectable()
 export class AuthService {
@@ -15,7 +18,9 @@ export class AuthService {
     private readonly userService: UsersService,
     private readonly signInProvider: SignInProvider,
     private readonly refreshTokensProvider: RefreshTokensProvider,
-    private readonly changePasswordProvider: ChangePasswordProvider
+    private readonly changePasswordProvider: ChangePasswordProvider,
+    private readonly forgotPasswordProvider: ForgotPasswordProvider,
+    private readonly resetPasswordProvider: ResetPasswordProvider
   ) {}
 
   async signIn(signInDto: SignInDto) {
@@ -32,5 +37,13 @@ export class AuthService {
       changePasswordDto.oldPassword,
       changePasswordDto.newPassword
     );
+  }
+
+  async forgotPassword(email: string) {
+    return await this.forgotPasswordProvider.forgotPassword(email);
+  }
+
+  async resetPassword(token: string, newPassword: string) {
+    return await this.resetPasswordProvider.resetPassword(token, newPassword);
   }
 }

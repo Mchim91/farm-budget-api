@@ -90,13 +90,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AuthModule.html" data-type="entity-link" >AuthModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                            'data-bs-target="#controllers-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' : 'data-bs-target="#xs-controllers-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' }>
+                                            'data-bs-target="#controllers-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' : 'data-bs-target="#xs-controllers-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' }>
                                             <span class="icon ion-md-swap"></span>
                                             <span>Controllers</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' :
-                                            'id="xs-controllers-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' :
+                                            'id="xs-controllers-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' }>
                                             <li class="link">
                                                 <a href="controllers/AuthController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AuthController</a>
                                             </li>
@@ -104,21 +104,30 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                        'data-bs-target="#injectables-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' : 'data-bs-target="#xs-injectables-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' }>
+                                        'data-bs-target="#injectables-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' : 'data-bs-target="#xs-injectables-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' :
-                                        'id="xs-injectables-links-module-AuthModule-7fd3d26beb15d7c1caeed8e7b6f402661637425f39e7419866bd9b68571c2353c5403417c3db60171f1dd521a73d0bf89c9549527cc763ffdb2b9a1df65551e6"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' :
+                                        'id="xs-injectables-links-module-AuthModule-0179fad35b0badca565b37f70263652c110e7523d37af04ec3513cc57280dbc6f6a563b7ce4757691ab0df6236f507c24349df9cb08189259d05f9cd6e577ae6"' }>
                                         <li class="link">
                                             <a href="injectables/AuthService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AuthService</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ChangePasswordProvider.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ChangePasswordProvider</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ForgotPasswordProvider.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ForgotPasswordProvider</a>
                                         </li>
                                         <li class="link">
                                             <a href="injectables/GenerateTokensProvider.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GenerateTokensProvider</a>
                                         </li>
                                         <li class="link">
                                             <a href="injectables/RefreshTokensProvider.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RefreshTokensProvider</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/ResetPasswordProvider.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ResetPasswordProvider</a>
                                         </li>
                                         <li class="link">
                                             <a href="injectables/SignInProvider.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SignInProvider</a>
@@ -128,6 +137,23 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="modules/DatabaseModule.html" data-type="entity-link" >DatabaseModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/MailModule.html" data-type="entity-link" >MailModule</a>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
+                                        'data-bs-target="#injectables-links-module-MailModule-e404d83ddc261ac40d9ad75f2d18600cc68f23a8907d56f65c787ad3d9341059c81cd599e9ddbb7e9ebfa983e08f6b270d40bb40de295a6ba17865e827db4997"' : 'data-bs-target="#xs-injectables-links-module-MailModule-e404d83ddc261ac40d9ad75f2d18600cc68f23a8907d56f65c787ad3d9341059c81cd599e9ddbb7e9ebfa983e08f6b270d40bb40de295a6ba17865e827db4997"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-MailModule-e404d83ddc261ac40d9ad75f2d18600cc68f23a8907d56f65c787ad3d9341059c81cd599e9ddbb7e9ebfa983e08f6b270d40bb40de295a6ba17865e827db4997"' :
+                                        'id="xs-injectables-links-module-MailModule-e404d83ddc261ac40d9ad75f2d18600cc68f23a8907d56f65c787ad3d9341059c81cd599e9ddbb7e9ebfa983e08f6b270d40bb40de295a6ba17865e827db4997"' }>
+                                        <li class="link">
+                                            <a href="injectables/MailService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >MailService</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </li>
                             <li class="link">
                                 <a href="modules/UsersModule.html" data-type="entity-link" >UsersModule</a>
@@ -209,6 +235,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
+                                <a href="classes/ChangePasswordDto.html" data-type="entity-link" >ChangePasswordDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ForgotPasswordDto.html" data-type="entity-link" >ForgotPasswordDto</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/RefreshTokenDto.html" data-type="entity-link" >RefreshTokenDto</a>
                             </li>
                             <li class="link">
@@ -237,10 +269,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/BcryptProvider.html" data-type="entity-link" >BcryptProvider</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ChangePasswordProvider.html" data-type="entity-link" >ChangePasswordProvider</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/CreateUserProvider.html" data-type="entity-link" >CreateUserProvider</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/FindOneUserByEmailProvider.html" data-type="entity-link" >FindOneUserByEmailProvider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ForgotPasswordProvider.html" data-type="entity-link" >ForgotPasswordProvider</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/GenerateTokensProvider.html" data-type="entity-link" >GenerateTokensProvider</a>
@@ -249,7 +287,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/HashingProvider.html" data-type="entity-link" >HashingProvider</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/MailService.html" data-type="entity-link" >MailService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/RefreshTokensProvider.html" data-type="entity-link" >RefreshTokensProvider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ResetPasswordProvider.html" data-type="entity-link" >ResetPasswordProvider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/SendResetPassWordLink.html" data-type="entity-link" >SendResetPassWordLink</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/SignInProvider.html" data-type="entity-link" >SignInProvider</a>

@@ -18,4 +18,12 @@ export class User {
   @Column({ type: 'varchar', length: 96, nullable: true })
   @Exclude()
   password?: string;
+
+  @Column({ type: 'varchar', length: 128, nullable: true })
+  @Exclude()
+  resetPasswordToken?: string;
+
+  @Column({ type: 'timestamp', nullable: true })
+  @Exclude()
+  resetPasswordExpires?: Date;
 }

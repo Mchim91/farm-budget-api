@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UsersService } from './users.service';
 import { UserDto } from '../data';
 import { Auth } from '../auth/decorator/auth.decorator';
@@ -12,6 +12,8 @@ export class UsersController {
 
   @Post()
   @Auth(AuthType.None)
+  @ApiOperation({ summary: 'Create a new user' })
+  @ApiBody({ type: UserDto })
   createUser(@Body() createUser: UserDto) {
     return this.usersService.createUser(createUser);
   }

@@ -11,11 +11,12 @@ import { AuthenticationGuard } from './auth/guards/authentication/authentication
 import { AccessTokenGuard } from './auth/guards/access-token/access-token.guard';
 import { JwtModule } from '@nestjs/jwt';
 import jwtConfig from './auth/config/jwt.config';
+import mailConfig from './auth/config/mail.config';
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [configuration, jwtConfig],
+      load: [configuration, jwtConfig, mailConfig],
       validationSchema,
     }),
     JwtModule.registerAsync(jwtConfig.asProvider()),

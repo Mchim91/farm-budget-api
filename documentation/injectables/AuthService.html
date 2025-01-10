@@ -137,7 +137,19 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
+                                <a href="#changePassword" >changePassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#forgotPassword" >forgotPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#refreshTokens" >refreshTokens</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPassword" >resetPassword</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -161,12 +173,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, signInProvider: <a href="../injectables/SignInProvider.html" target="_self">SignInProvider</a>, refreshTokensProvider: <a href="../injectables/RefreshTokensProvider.html" target="_self">RefreshTokensProvider</a>)</code>
+<code>constructor(userService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, signInProvider: <a href="../injectables/SignInProvider.html" target="_self">SignInProvider</a>, refreshTokensProvider: <a href="../injectables/RefreshTokensProvider.html" target="_self">RefreshTokensProvider</a>, changePasswordProvider: <a href="../injectables/ChangePasswordProvider.html" target="_self">ChangePasswordProvider</a>, forgotPasswordProvider: <a href="../injectables/ForgotPasswordProvider.html" target="_self">ForgotPasswordProvider</a>, resetPasswordProvider: <a href="../injectables/ResetPasswordProvider.html" target="_self">ResetPasswordProvider</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/auth/auth.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/auth/auth.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -219,6 +231,42 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>changePasswordProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ChangePasswordProvider.html" target="_self" >ChangePasswordProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>forgotPasswordProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ForgotPasswordProvider.html" target="_self" >ForgotPasswordProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>resetPasswordProvider</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ResetPasswordProvider.html" target="_self" >ResetPasswordProvider</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -233,6 +281,156 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>changePassword</b></span>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>changePassword(changePasswordDto: <a href="../classes/ChangePasswordDto.html" target="_self">ChangePasswordDto</a>, user: <a href="../entitys/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/auth/auth.service.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>changePasswordDto</td>
+                                            <td>
+                                                            <code><a href="../classes/ChangePasswordDto.html" target="_self" >ChangePasswordDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../entitys/User.html" target="_self" >User</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="forgotPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>forgotPassword</b></span>
+                        <a href="#forgotPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>forgotPassword(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/auth/auth.service.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>email</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -255,8 +453,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="21"
-                                    class="link-to-prism">src/app/auth/auth.service.ts:21</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/auth/auth.service.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -306,6 +504,87 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="resetPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPassword</b></span>
+                        <a href="#resetPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPassword(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, newPassword: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/auth/auth.service.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>token</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>newPassword</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="signIn"></a>
                     <span class="name">
                             <span class="modifier">Async</span>
@@ -324,8 +603,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/app/auth/auth.service.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/auth/auth.service.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -383,6 +662,12 @@ import { SignInProvider } from &#x27;./providers/sign-in.provider&#x27;;
 import { RefreshTokensProvider } from &#x27;./providers/refresh-tokens.provider&#x27;;
 import { SignInDto } from &#x27;./dtos/signin.dto&#x27;;
 import { RefreshTokenDto } from &#x27;./dtos/refresh-token.dto&#x27;;
+import { ChangePasswordDto } from &#x27;./dtos&#x27;;
+
+import { ChangePasswordProvider } from &#x27;./providers/change-password.provider&#x27;;
+import { User } from &#x27;../domain&#x27;;
+import { ForgotPasswordProvider } from &#x27;./providers/forgot-password.provider&#x27;;
+import { ResetPasswordProvider } from &#x27;./providers/reset-password.provider&#x27;;
 
 @Injectable()
 export class AuthService {
@@ -390,7 +675,10 @@ export class AuthService {
     @Inject(forwardRef(() &#x3D;&gt; UsersService))
     private readonly userService: UsersService,
     private readonly signInProvider: SignInProvider,
-    private readonly refreshTokensProvider: RefreshTokensProvider
+    private readonly refreshTokensProvider: RefreshTokensProvider,
+    private readonly changePasswordProvider: ChangePasswordProvider,
+    private readonly forgotPasswordProvider: ForgotPasswordProvider,
+    private readonly resetPasswordProvider: ResetPasswordProvider
   ) {}
 
   async signIn(signInDto: SignInDto) {
@@ -399,6 +687,22 @@ export class AuthService {
 
   async refreshTokens(refreshTokenDto: RefreshTokenDto) {
     return await this.refreshTokensProvider.refreshTokens(refreshTokenDto);
+  }
+
+  async changePassword(changePasswordDto: ChangePasswordDto, user: User) {
+    return await this.changePasswordProvider.changePassword(
+      user,
+      changePasswordDto.oldPassword,
+      changePasswordDto.newPassword
+    );
+  }
+
+  async forgotPassword(email: string) {
+    return await this.forgotPasswordProvider.forgotPassword(email);
+  }
+
+  async resetPassword(token: string, newPassword: string) {
+    return await this.resetPasswordProvider.resetPassword(token, newPassword);
   }
 }
 </code></pre>

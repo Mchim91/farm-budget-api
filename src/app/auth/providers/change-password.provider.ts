@@ -18,13 +18,11 @@ export class ChangePasswordProvider {
   @Inject(forwardRef(() => HashingProvider))
   private readonly hashingProvider: HashingProvider;
 
-  async changePassword(user: any, oldPassword: string, newPassword: string) {
+  async changePassword(user: User, oldPassword: string, newPassword: string) {
     try {
-      const existingUser = this.usersRepo.findOne({
+      const existingUser = await this.usersRepo.findOne({
         where: { id: user.id },
       });
-
-      console.log('Existing user is?:', existingUser);
 
       if (!existingUser) {
         throw new BadRequestException('User not found...');
@@ -32,27 +30,23 @@ export class ChangePasswordProvider {
 
       const passwordMatch = await this.hashingProvider.comparePassword(
         oldPassword,
-        user.password
+        existingUser.password
       );
-
-      console.log('Password match is:', passwordMatch);
 
       if (!passwordMatch) {
         throw new UnauthorizedException('Wrong Credentials');
       }
 
-      const newHashedPassword = this.usersRepo.create({
-        ...user,
-        password: await this.hashingProvider.hashPassword(newPassword),
-      });
-      const data = await this.usersRepo.save(newHashedPassword);
+      existingUser.password = await this.hashingProvider.hashPassword(
+        newPassword
+      );
 
-      console.log('New Data is:', data);
+      const updatedUser = await this.usersRepo.save(existingUser);
 
       return serviceResponse({
         status: true,
-        message: `Password of ${user?.firstName} changed successfully`,
-        data,
+        message: `Password of ${existingUser?.firstName} ${existingUser?.lastName} changed successfully`,
+        data: updatedUser,
       });
     } catch (error) {
       {

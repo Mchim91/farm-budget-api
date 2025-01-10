@@ -142,6 +142,9 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
                                 <a href="#createUser" >createUser</a>
                             </li>
                         </ul>
@@ -168,6 +171,9 @@
                     <a name="createUser"></a>
                     <span class="name">
                             <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
                         <span ><b>createUser</b></span>
                         <a href="#createUser"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -184,14 +190,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post()<br /></code>
+                    <code>@Post()<br />@Auth(AuthType.None)<br />@ApiOperation({summary: &#x27;Create a new user&#x27;})<br />@ApiBody({type: UserDto})<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="12"
-                                    class="link-to-prism">src/app/users/users.controller.ts:12</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/app/users/users.controller.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -242,9 +248,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Post } from &#x27;@nestjs/common&#x27;;
-import { ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
 import { UsersService } from &#x27;./users.service&#x27;;
 import { UserDto } from &#x27;../data&#x27;;
+import { Auth } from &#x27;../auth/decorator/auth.decorator&#x27;;
+import { AuthType } from &#x27;../auth/enums/auth-type.enum&#x27;;
 
 @Controller(&#x27;users&#x27;)
 @ApiTags(&#x27;Users&#x27;)
@@ -252,6 +260,9 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
+  @Auth(AuthType.None)
+  @ApiOperation({ summary: &#x27;Create a new user&#x27; })
+  @ApiBody({ type: UserDto })
   createUser(@Body() createUser: UserDto) {
     return this.usersService.createUser(createUser);
   }
