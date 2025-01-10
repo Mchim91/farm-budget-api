@@ -10,12 +10,16 @@ import { GenerateTokensProvider } from './providers/generate-tokens.provider';
 import { SignInProvider } from './providers/sign-in.provider';
 import { RefreshTokensProvider } from './providers/refresh-tokens.provider';
 import { AuthController } from './auth.controller';
+import { ChangePasswordProvider } from './providers/change-password.provider';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from '../domain';
 
 @Module({
   imports: [
     forwardRef(() => UsersModule),
     ConfigModule.forFeature(jwtConfig),
     JwtModule.registerAsync(jwtConfig.asProvider()),
+    TypeOrmModule.forFeature([User]),
   ],
   controllers: [AuthController],
   providers: [
@@ -24,6 +28,7 @@ import { AuthController } from './auth.controller';
     GenerateTokensProvider,
     RefreshTokensProvider,
     SignInProvider,
+    ChangePasswordProvider,
   ],
   exports: [AuthService, HashingProvider],
 })
