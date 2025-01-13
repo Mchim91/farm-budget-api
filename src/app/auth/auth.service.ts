@@ -10,6 +10,7 @@ import { ChangePasswordProvider } from './providers/change-password.provider';
 import { User } from '../domain';
 import { ForgotPasswordProvider } from './providers/forgot-password.provider';
 import { ResetPasswordProvider } from './providers/reset-password.provider';
+import { VerifyOtpProvider } from './providers/verifyOtp.provider';
 
 @Injectable()
 export class AuthService {
@@ -20,7 +21,8 @@ export class AuthService {
     private readonly refreshTokensProvider: RefreshTokensProvider,
     private readonly changePasswordProvider: ChangePasswordProvider,
     private readonly forgotPasswordProvider: ForgotPasswordProvider,
-    private readonly resetPasswordProvider: ResetPasswordProvider
+    private readonly resetPasswordProvider: ResetPasswordProvider,
+    private readonly verifyOtpProvider: VerifyOtpProvider
   ) {}
 
   async signIn(signInDto: SignInDto) {
@@ -43,7 +45,19 @@ export class AuthService {
     return await this.forgotPasswordProvider.forgotPassword(email);
   }
 
-  async resetPassword(token: string, newPassword: string) {
-    return await this.resetPasswordProvider.resetPassword(token, newPassword);
+  async verifyOtp(email: string, otp: string) {
+    return await this.verifyOtpProvider.verifyOtp(email, otp);
+  }
+
+  async resetPassword(
+    email: string,
+    newPassword: string,
+    confirmPassword: string
+  ) {
+    return await this.resetPasswordProvider.resetPassword(
+      email,
+      newPassword,
+      confirmPassword
+    );
   }
 }

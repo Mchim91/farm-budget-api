@@ -49,13 +49,20 @@ export class AuthController {
   }
 
   @Auth(AuthType.None)
+  @Post('verify-otp')
+  async verifyOtp(@Body('email') email: string, @Body('otp') otp: string) {
+    return await this.authService.verifyOtp(email, otp);
+  }
+
+  @Auth(AuthType.None)
   @Post('reset-password')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: 'Reset user password' })
   async resetPassword(
-    @Body('token') token: string,
-    @Body('newPassword') newPassword: string
+    @Body('email') email: string,
+    @Body('newPassword') newPassword: string,
+    @Body('confirmPassword') confirmPassword: string
   ) {
-    return this.authService.resetPassword(token, newPassword);
+    return this.authService.resetPassword(email, newPassword, confirmPassword);
   }
 }

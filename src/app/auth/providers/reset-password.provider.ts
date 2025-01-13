@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MoreThan, Repository } from 'typeorm';
 import { HashingProvider } from './hashing.provider';
 import { User } from 'src/app/domain';
+import { serviceResponse } from 'src/app/core';
 
 @Injectable()
 export class ResetPasswordProvider {
@@ -12,26 +13,31 @@ export class ResetPasswordProvider {
     private readonly hashingProvider: HashingProvider
   ) {}
 
-  async resetPassword(token: string, newPassword: string) {
-    // Find the user by reset token
-    const user = await this.usersRepo.findOne({
-      where: {
-        resetPasswordToken: await this.hashingProvider.hashPassword(token),
-        resetPasswordExpires: MoreThan(new Date()), // Ensure token is not expired
-      },
-    });
-
-    if (!user) {
-      throw new BadRequestException('Invalid or expired reset token');
+  async resetPassword(
+    email: string,
+    newPassword: string,
+    confirmPassword: string
+  ) {
+    if (newPassword != confirmPassword) {
+      throw new BadRequestException('Password does not match');
     }
 
-    // Update the user's password
-    user.password = await this.hashingProvider.hashPassword(newPassword);
-    user.resetPasswordToken = null;
-    user.resetPasswordExpires = null;
+    const user = await this.usersRepo.findOne({ where: { email } });
+
+    if (!user) {
+      throw new BadRequestException('User not found');
+    }
+
+    const hashedPassword = await this.hashingProvider.hashPassword(newPassword);
+    user.password = hashedPassword;
+    user.otp = null;
+    user.otpExpires = null;
 
     await this.usersRepo.save(user);
 
-    return { message: 'Password reset successfully' };
+    return serviceResponse({
+      status: true,
+      message: 'Password reset successfully',
+    });
   }
 }

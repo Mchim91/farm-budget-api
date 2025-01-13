@@ -26,4 +26,10 @@ export class User {
   @Column({ type: 'timestamp', nullable: true })
   @Exclude()
   resetPasswordExpires?: Date;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  otp?: string;
+
+  @Column({ type: 'timestamp', nullable: true })
+  otpExpires?: Date;
 }

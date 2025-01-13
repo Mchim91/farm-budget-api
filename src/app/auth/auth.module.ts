@@ -16,6 +16,7 @@ import { User } from '../domain';
 import { ForgotPasswordProvider } from './providers/forgot-password.provider';
 import { ResetPasswordProvider } from './providers/reset-password.provider';
 import { MailModule } from '../mail/mail.module';
+import { VerifyOtpProvider } from './providers/verifyOtp.provider';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { MailModule } from '../mail/mail.module';
     ChangePasswordProvider,
     ForgotPasswordProvider,
     ResetPasswordProvider,
+    VerifyOtpProvider,
   ],
   exports: [AuthService, HashingProvider, ForgotPasswordProvider],
 })

@@ -1,43 +1,21 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { MailerService } from '@nestjs-modules/mailer';
 
 @Injectable()
 export class MailService {
   private readonly logger = new Logger(MailService.name);
-  private readonly baseUrl: string;
-  constructor(
-    private readonly mailerService: MailerService,
-    private readonly configService: ConfigService
-  ) {
-    this.baseUrl = this.configService.get<string>('BASE_URL');
-  }
+  constructor(private readonly mailerService: MailerService) {}
 
-  async sendResetPasswordEmail(to: string, resetToken: string, name: string) {
-    const resetUrl = `${this.baseUrl}/reset-password?token=${resetToken}`;
-
+  async sendOtpEmail(to: string, otp: string) {
     const htmlTemplate = `
-      <p>Hi ${name},</p>
-      <p>You requested to reset your password. Click the link below to reset it:</p>
-      <p><a href="${resetUrl}">Reset Password</a></p>
-      <p>If you did not request this, you can safely ignore this email.</p>
+      <p>Your OTP for resetting your password is: <strong>${otp}</strong></p>
+      <p>This OTP is valid for 10 minutes.</p>
     `;
 
-    try {
-      await this.mailerService.sendMail({
-        to,
-        subject: 'Password Reset Request',
-        html: htmlTemplate,
-        context: {
-          name,
-          resetUrl,
-        },
-      });
-
-      this.logger.log(`Password reset email sent to ${to}`);
-    } catch (error) {
-      this.logger.error(`Failed to send email to ${to}`, error.stack);
-      throw error;
-    }
+    await this.mailerService.sendMail({
+      to,
+      subject: 'Your OTP for Password Reset',
+      html: htmlTemplate,
+    });
   }
 }

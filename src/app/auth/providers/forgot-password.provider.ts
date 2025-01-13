@@ -9,7 +9,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { serviceResponse } from 'src/app/core';
 import { User } from 'src/app/domain';
-import { nanoid } from 'nanoid';
 import { MailService } from 'src/app/mail/providers/mail.service';
 
 @Injectable()
@@ -30,26 +29,19 @@ export class ForgotPasswordProvider {
       throw new BadRequestException('User not found');
     }
 
-    // Generate a reset token
-    const resetToken = nanoid(64);
-
-    // Hash the token and set expiration
-    user.resetPasswordToken = await this.hashingProvider.hashPassword(
-      resetToken
-    );
-    user.resetPasswordExpires = new Date(Date.now() + 3600 * 1000); // Token valid for 1 hour
+    // Generate a reset
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const hashedOtp = await this.hashingProvider.hashPassword(otp);
+    user.otp = hashedOtp;
+    user.otpExpires = new Date(Date.now() + 10 * 60);
 
     await this.usersRepo.save(user);
 
-    await this.mailService.sendResetPasswordEmail(
-      user.email,
-      resetToken,
-      user.firstName || 'User'
-    );
+    await this.mailService.sendOtpEmail(user.email, otp);
 
     return serviceResponse({
       status: true,
-      message: 'Password reset email sent successfully',
+      message: 'OTP sent to email',
     });
   }
 }
